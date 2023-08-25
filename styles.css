@@ -1,0 +1,139 @@
+@font-face {
+    font-family: PT Root;
+    src: url(/assets/fonts/ptroot.woff2);
+}
+
+body{
+    font-family: PT Root;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #000;
+    color: #f5f5f5;
+    /* margin: 40px auto;
+    width: 620px; */
+
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header{
+    z-index: 100000001;
+    position: fixed;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+header h1, header h2{
+    display: flex;
+    margin: 0;
+}
+
+h1 span, h2 span{
+    width: 150px;
+    display: inline-block;
+    flex: 0 0 auto;
+
+    font-size: 16px !important;
+    font-variation-settings: "wght" 800 !important;
+}
+
+h2 span{
+    width: 250px;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    grid-auto-flow: dense;
+}
+
+section.alternate-layout div.split:first-child{
+    grid-column: 2;
+}
+
+section.alternate-layout div.split:last-child{
+    grid-column: 1;
+}
+
+section div.split{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+    overflow: hidden;
+}
+
+div.split:first-child{
+    background-color: #111111;
+}
+
+section div.slides{
+    width: 500px;
+    height: 750px;
+    position: relative;
+}
+
+section div.slides img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+}
+
+section h2{
+    font-size: 32px;
+}
+
+section p{
+    margin: 32px 0 0;
+}
+
+section a{
+    background-color: #fff;
+    color: #111111;
+    font-size: 0.8rem;
+    text-decoration: none;
+    padding: .5rem 1.5rem;
+    border-radius: 2rem;
+    display: inline-flex;
+    align-items: center;
+}
+section a p{
+    line-height: 1;
+}
+
+section a img{
+    margin-left: .5rem;
+    width: 10px;
+    height: 16px;
+    object-fit: cover;
+    object-position: center right;
+    transition: width .4s ease;
+}
+section a:hover img{
+    width: 25px;
+}
+
+@media (max-width: 1080px) {
+    section{
+        display: block;
+    }
+}
+
+@media (max-width: 700px) {
+    section div.slides,
+    section div.slides img{
+        width: 80vw;
+        height: 120vw;
+    }
+
+    
+}
